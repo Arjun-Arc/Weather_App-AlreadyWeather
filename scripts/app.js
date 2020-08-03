@@ -106,15 +106,15 @@ search.addEventListener('submit', e=>{
 
   //prevent Refresh
   e.preventDefault();
-
   //get city input
   const city=search.city.value.trim();
   search.reset();
-
+  
   //update ui with city
   updateCity(city)
-    .then(data => updateUI(data))
-    .catch(err => console.log(err));
-
-
+  .then(data => updateUI(data))
+  .catch(err => console.log(err));
+  
+  measure.parentElement.classList.remove('d-none');
+  
 });
