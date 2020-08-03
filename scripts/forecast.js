@@ -1,4 +1,4 @@
-const loc = 'OlyAqkUtA2UdThWL7cmHplX1GB2eGJKB';
+const loc = 'GpEqiNQm5eDEiX9tyzbrXyhFO94Ex4Ts';
 
 // weather info
 const getWeather = async(key) =>{
