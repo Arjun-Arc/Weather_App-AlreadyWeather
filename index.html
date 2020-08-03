@@ -6,19 +6,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
-  <title>The Weather</title>
+  <title>AlreadyWeather</title>
 </head>
 <body>
   
   <div class="container my-5 mx-auto">
-
+    <!-- head -->
     <h1 class="text-muted text-center my-4">AlreadyWeather</h1>
 
+    <!-- search bar -->
     <form class="change-location my-4 text-center text-muted">
       <label for="city">Enter a City for AlreadyWeather info</label>
       <input type="text" name="city" class="form-control p-4">
     </form>
 
+
+    <!-- weather img-->
     <div class="card shadow-lg rounded d-none">
 
       <img src="https://via.placeholder.com/400x300" class="card-img-top  time">
@@ -27,6 +30,7 @@
         <img src="https://via.placeholder.com/100X100">
       </div>
 
+      <!-- weather info -->
       <div class="text-center text-muted text-uppercase details">
         <h5 class="my-4">City name</h5>
         <div class="my-3">Weather Condition</div>
@@ -38,8 +42,10 @@
 
     </div>
 
-
-
+      <!-- change measure -->
+    <div class=" text-center my-5 ">
+        <span class="measure btn btn-danger text-light ">&deg;F</span>  
+    </div>
 
   </div>
 

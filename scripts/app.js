@@ -3,6 +3,9 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
+const measure = document.querySelector('.measure');
+const measureSpan = details.children[2];
+
 
 //display info on screen
 const updateUI = data => {
@@ -10,7 +13,6 @@ const updateUI = data => {
   // const cityDetails = data.cityDetails;
   // const weather = data.weather;
   const {cityDetails, weather} = data;
-  console.log(cityDetails, weather);
 
   //update ui with all info
   details.innerHTML = `
@@ -18,8 +20,8 @@ const updateUI = data => {
     <h5 class="my-4">${cityDetails.EnglishName}</h5>
     <div class="my-3">${weather.WeatherText}</div>
     <div class="display-4 my-4">
-      <span>${weather.Temperature.Metric.Value}</span>
-      <span>&deg;C</span>
+    <span>${weather.Temperature.Metric.Value}</span>
+    <span>&deg;C</span>    
     </div>
     </div>
   `;
@@ -44,8 +46,46 @@ const updateUI = data => {
   if(card.classList.contains('d-none'))
     card.classList.remove('d-none');
 
+  //change weather
+  measure.addEventListener('click', (data)=>{
+      
+    measureSpan.classList.toggle('f');
+    if(measureSpan.classList.contains('f')){
+      details.innerHTML = `
+        <div class="text-center text-muted text-uppercase details">
+        <h5 class="my-4">${cityDetails.EnglishName}</h5>
+        <div class="my-3">${weather.WeatherText}</div>
+        <div class="display-4 my-4">
+        <span>${weather.Temperature.Imperial.Value}</span>
+        <span>&deg;F</span>    
+        </div>
+        </div>
+      `;
+      measure.innerHTML=`&deg;C`;
+    }else{
+      details.innerHTML = `
+        <div class="text-center text-muted text-uppercase details">
+        <h5 class="my-4">${cityDetails.EnglishName}</h5>
+        <div class="my-3">${weather.WeatherText}</div>
+        <div class="display-4 my-4">
+        <span>${weather.Temperature.Metric.Value}</span>
+        <span>&deg;C</span>    
+        </div>
+        </div>
+      `;
+      measure.innerHTML=`&deg;F`;
+    }
+
+    
+
+
+});
+  
+
 };
 
+
+  
 
 //getting city & weather info 
 const updateCity = async(city) =>{
