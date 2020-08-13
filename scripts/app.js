@@ -127,4 +127,6 @@ if(localStorage.getItem('city')){
   updateCity(localStorage.getItem('city'))
   .then(data => updateUI(data))
   .catch(err => console.log(err));
+  
+  measure.parentElement.classList.remove('d-none');
 }
