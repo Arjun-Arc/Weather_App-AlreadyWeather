@@ -116,5 +116,15 @@ search.addEventListener('submit', e=>{
   .catch(err => console.log(err));
   
   measure.parentElement.classList.remove('d-none');
+
+  //set local storage
+  localStorage.setItem('city', city);
   
 });
+
+//update from local storage
+if(localStorage.getItem('city')){
+  updateCity(localStorage.getItem('city'))
+  .then(data => updateUI(data))
+  .catch(err => console.log(err));
+}
